@@ -1,4 +1,4 @@
-const db = require('../models/');
+const db = require('../../models');
 const User = db.User;
 const Sequelize = require('sequelize');
 var userHandeler = require('../routes/userHandler');
@@ -22,3 +22,7 @@ exports.createUser = async (req, res) => {
         id: newUser.id
     });
 }
+
+// Log In User
+
+exports.logUser

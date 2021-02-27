@@ -18,6 +18,7 @@ function Footer() {
               <h4>Quick Links</h4>
               <ui className="list-unstyled">
                 <li>Home</li>
+                <li>About</li>
                 <li>Top Rated</li>
                 <li>Contact Us</li>
               </ui>
@@ -34,7 +35,7 @@ function Footer() {
           </div>
 
           <hr />
-          
+
           <div className="row">
             <p className="col-sm">
               &copy;{new Date().getFullYear()} MoviePlex | All rights reserved |
