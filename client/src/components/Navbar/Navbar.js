@@ -1,40 +1,70 @@
-import React, { Component } from 'react';
-import { Button } from "../Navbar/Button";
-import { MenuItems } from "../Navbar/MenuItems";
-import "../../style/Navbar.css";
+import React, { useState, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
+import { Button } from '../../globalStyles';
+import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink } from './Navbar.elements';
 
-class Navbar extends Component{
-    constructor(props) {
-        super(props);
-        this.state = { clicked: false }
+
+const Navbar = () => {
+    const [click, setClick] = useState(false)
+    const [button, setButton] = useState(true)
+
+    const handleClick = () => setClick(!click)
+    const showButton = () => {
+        if(window.innerWidth <= 960) {
+            setButton(false)
+        } else {
+            setButton(true)
+        }
     }
+useEffect(() => {
+    showButton()
+}, [])
 
-    // handleClick = () => {
-    //     this.setState({ clicked: !this.state.clicked })
-    // }
+window.addEventListener('resize', showButton);
 
-    render() {
-        return(
-            <nav className="NavbarItems">
-                <h1 className="navbar-logo">MoviePlex <i className="fas fa-video"></i></h1>
-                <div className="menu-icon" onClick={this.handleClick}>
-                    <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
-                </div>
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index) => {
-                        return (
-                            <li key={index}>
-                                <a className={item.cName} href={item.url}>
-                                {item.title}
-                                </a>
-                            </li>
-                        )
-                    })}
-                </ul>
-                <Button><i class="fas fa-user"></i> LogIn</Button>
-            </nav>
-        )
-    }
+    return (
+        <>
+        <IconContext.Provider value={{ color: '#fff' }}>
+            <Nav>
+                <NavbarContainer>
+                    <NavLogo to="/">
+                        <NavIcon />
+                        MoviePlex
+                    </NavLogo>
+                    <MobileIcon onClick={handleClick}>
+                        {click ? <FaTimes /> : <FaBars />}
+                    </MobileIcon>
+                    <NavMenu onClick={handleClick} click={click}>
+                        <NavItem>
+                            <NavLinks to='/'>Home</NavLinks>
+                        </NavItem>
+                        <NavItem>
+                            <NavLinks to='/about'>About</NavLinks>
+                        </NavItem>
+                        <NavItem>
+                            <NavLinks to='/toprated'>Top Rated</NavLinks>
+                        </NavItem>
+                        <NavItemBtn>
+                            {button ? (
+                                <NavBtnLink to="/signup">
+                                    <Button primary>Sign Up</Button>
+                                </NavBtnLink>
+                            ) : (
+                                <NavBtnLink to="/signup">
+                                    <Button fontBig primary>
+                                        Sign Up
+                                    </Button>
+                                </NavBtnLink>
+                            )}
+                        </NavItemBtn>
+                    </NavMenu>
+                </NavbarContainer>
+            </Nav>
+        </IconContext.Provider> 
+        </>
+    )
 }
 
 export default Navbar
+
