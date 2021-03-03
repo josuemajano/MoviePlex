@@ -9,7 +9,7 @@ export const homeObjOne = {
     headline: 'Headline Example',
     lightText: true,
     topLine: 'Movie Example',
-    img: require('../../images/svg-1.svg'),
+    img: '',
     alt: 'Image',
     start: ''
 };
@@ -22,9 +22,9 @@ export const homeObjTwo = {
     lightTextDesc: false,
     buttonLabel: 'Get Started',
     description: 'MoviePlex is an application that helps the user save their favorite movies!',
-    headline: 'Headline Example',
+    headline: 'MoviePlex',
     lightText: false,
-    topLine: 'Movie Example',
+    topLine: 'About',
     img: '',
     alt: 'Image',
     start: 'true'

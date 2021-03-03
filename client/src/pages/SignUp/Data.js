@@ -9,7 +9,7 @@ export const homeObjOne = {
     headline: 'Headline Example',
     lightText: true,
     topLine: 'Movie Example',
-    img: require('../../images/svg-1.svg'),
+    img: '',
     alt: 'Image',
     start: ''
 };

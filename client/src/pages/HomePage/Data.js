@@ -1,3 +1,5 @@
+// import {InfoSection} from '../../components/InfoSection';
+
 export const homeObjOne = {
     lightBg: false,
     primary: true,
@@ -9,7 +11,7 @@ export const homeObjOne = {
     headline: 'MoviePlex',
     lightText: true,
     topLine: 'Welcome to',
-    img: require("../../images/svg-1.svg"),
+    img: '',
     alt: 'Movie',
     start: ''
 };

@@ -4,6 +4,7 @@ const parseurl = require('parseurl');
 const Sequelize = require('sequelize');
 const { User } = require('./models');
 const userHandler = require('./app/routes/userHandler');
+const router = express.Router();
 
 const PORT = process.env.PORT;
 
@@ -12,6 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', userHandler);
+
+router.get()
 
 // Catch all route 
 app.get('*', (req, res) => {
