@@ -77,3 +77,47 @@ vertical-align: middle;
 display: inline-block;
 max-height: 500px;
 `;
+
+export const Form = styled.form`
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+background-color: #37474f;
+width: ${props => (props.barOpended ? "30rem" : "2rem")};
+cursor: ${props => (props.barOpended ? "auto" : "pointer")};
+padding: 2rem;
+height: 2rem;
+border-radius: 10rem;
+transition: width 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+`;
+
+export const CircleButton = styled.button`
+line-height: 1;
+pointer-events: ${props => (props.barOpended ? "auto" : "none")};
+cursor: ${props => (props.barOpended ? "pointer" : "none")};
+background-color: transparent;
+border: none;
+outline: none;
+color: #fff;
+`;
+
+export const Input = styled.input`
+font-size: 14px;
+line-height: 1;
+background-color: transparent;
+width: 100%;
+margin-left: ${props => (props.barOpended ? "1rem" : "0rem")};
+border: none;
+color: white;
+transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+&:focus,
+&:active {
+    outline: none;
+}
+&::placeholder {
+    color: #fff;
+}
+`;

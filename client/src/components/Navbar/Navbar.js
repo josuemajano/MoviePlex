@@ -10,6 +10,8 @@ const Navbar = () => {
     const [button, setButton] = useState(true)
 
     const handleClick = () => setClick(!click)
+    const closeMobileMenu = () => setClick(false);
+
     const showButton = () => {
         if(window.innerWidth <= 960) {
             setButton(false)
@@ -28,7 +30,7 @@ window.addEventListener('resize', showButton);
         <IconContext.Provider value={{ color: '#fff' }}>
             <Nav>
                 <NavbarContainer>
-                    <NavLogo to="/">
+                    <NavLogo to="/" onclick={closeMobileMenu}>
                         <NavIcon />
                         MoviePlex
                     </NavLogo>
@@ -37,13 +39,13 @@ window.addEventListener('resize', showButton);
                     </MobileIcon>
                     <NavMenu onClick={handleClick} click={click}>
                         <NavItem>
-                            <NavLinks to='/'>Home</NavLinks>
+                            <NavLinks to='/' onclick={closeMobileMenu}>Home</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/about'>About</NavLinks>
+                            <NavLinks to='/about' onclick={closeMobileMenu}>About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/toprated'>Top Rated</NavLinks>
+                            <NavLinks to='/popular' onclick={closeMobileMenu}>Popular</NavLinks>
                         </NavItem>
                         <NavItemBtn>
                             {button ? (
@@ -51,7 +53,7 @@ window.addEventListener('resize', showButton);
                                     <Button primary>Sign Up</Button>
                                 </NavBtnLink>
                             ) : (
-                                <NavBtnLink to="/signup">
+                                <NavBtnLink to="/signup" onclick={closeMobileMenu}>
                                     <Button fontBig primary>
                                         Sign Up
                                     </Button>

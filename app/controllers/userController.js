@@ -25,4 +25,4 @@ exports.createUser = async (req, res) => {
 
 // Log In User
 
-exports.logUser
+exports.logUser = async (req, res)

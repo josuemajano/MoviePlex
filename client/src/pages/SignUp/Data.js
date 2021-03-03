@@ -5,12 +5,12 @@ export const homeObjOne = {
     lightTopLine: true,
     lightTextDesc: true,
     buttonLabel: 'Get Started',
-    description: 'MoviePlex is an application that helps a user save their favorite movies!',
-    headline: 'MoviePlex',
+    description: 'MoviePlex is an application that helps the user save their favorite movies!',
+    headline: 'Headline Example',
     lightText: true,
-    topLine: 'Welcome to',
-    img: require("../../images/svg-1.svg"),
-    alt: 'Movie',
+    topLine: 'Movie Example',
+    img: require('../../images/svg-1.svg'),
+    alt: 'Image',
     start: ''
 };
 
@@ -47,16 +47,16 @@ export const homeObjThree = {
 };
 
 export const homeObjFour = {
-    lightBg: false,
-    primary: true,
-    lightTopLine: true,
-    lightTextDesc: true,
+    lightBg: true,
+    primary: false,
+    imgStart: 'start',
+    lightTopLine: false,
+    lightTextDesc: false,
     buttonLabel: 'Get Started',
     description: 'MoviePlex is an application that helps the user save their favorite movies!',
     headline: 'Headline Example',
-    lightText: true,
+    lightText: false,
     topLine: 'Movie Example',
-    imgStart: 'start',
     img: '',
     alt: 'Image',
     start: 'true'

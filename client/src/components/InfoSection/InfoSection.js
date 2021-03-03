@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Button } from '../../globalStyles';
+import { BsSearch } from 'react-icons/bs';
+import { Container,  } from '../../globalStyles';
 import {
     InfoSec,
     InfoRow,
@@ -10,7 +11,10 @@ import {
     Heading,
     Subtitle,
     ImgWrapper,
-    Img
+    Img,
+    Form,
+    CircleButton,
+    Input
 } from './InfoSection.elements';
 
 const InfoSection = ({
@@ -28,6 +32,18 @@ const InfoSection = ({
     alt,
     start
 }) => {
+    const [input, setInput] = useState("");
+    const [barOpened, setBarOpened] = useState(false);
+    const formRef = useRef();
+    const inputFocus = useRef();
+    
+    const onFormSubmit = e => {
+        e.preventDefault();
+        setInput("");
+        setBarOpened(false);
+        console.log(`Form was submitted with input: ${input}`);
+    };
+
     return (
         <>
             <InfoSec lightBg={lightBg}>
@@ -38,8 +54,21 @@ const InfoSection = ({
                                 <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
                                 <Heading lightText={lightText}>{headline}</Heading>
                                 <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                                <Link to='/signup'>
-                                    <Button big fontBig primary={primary}>{buttonLabel}</Button>
+                                <Link to='/'>
+                                    <Form barOpended={barOpened} onClick={() => {
+                                        setBarOpened(true);
+                                        inputFocus.current.focus();
+                                    }} onFocus={() => {
+                                        setBarOpened(true);
+                                        inputFocus.current.focus();
+                                    }} onBlur={() => {
+                                        setBarOpened(false);
+                                    }} onSubmit={onFormSubmit} ref={formRef}>
+                                        <CircleButton type="submit" barOpened={barOpened}>
+                                            <BsSearch />
+                                        </CircleButton>
+                                        <Input onChange={e => setInput(e.target.value)} ref={inputFocus} value={input} barOpened={barOpened} placeholder="  Search for a movie..."/>
+                                    </Form>
                                 </Link>
                             </TextWrapper>
                         </InfoColumn>

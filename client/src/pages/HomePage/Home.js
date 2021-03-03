@@ -1,6 +1,6 @@
 import React from 'react';
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
-import { InfoSection } from '../../components';
+import { InfoSection, MoviePoster } from '../../components';
 
 const Home = () => {
     return (
@@ -8,9 +8,10 @@ const Home = () => {
             <InfoSection {...homeObjOne} />
             <InfoSection {...homeObjTwo} />
             <InfoSection {...homeObjThree} />
+            <MoviePoster/>
             <InfoSection {...homeObjFour} />
         </>
     )
 }
 
-export default Home
+export default Home;
