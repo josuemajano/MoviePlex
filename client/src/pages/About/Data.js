@@ -5,12 +5,12 @@ export const homeObjOne = {
     lightTopLine: true,
     lightTextDesc: true,
     buttonLabel: 'Get Started',
-    description: 'MoviePlex is an application that helps the user save their favorite movies!',
-    headline: 'Headline Example',
+    description: 'MoviePlex is an application that helps a user save their favorite movies!',
+    headline: 'MoviePlex',
     lightText: true,
-    topLine: 'Movie Example',
+    topLine: 'Welcome to',
     img: '',
-    alt: 'Image',
+    alt: 'Movie',
     start: ''
 };
 
@@ -20,11 +20,10 @@ export const homeObjTwo = {
     imgStart: 'start',
     lightTopLine: false,
     lightTextDesc: false,
-    buttonLabel: 'Get Started',
     description: 'MoviePlex is an application that helps the user save their favorite movies!',
-    headline: 'Headline Example',
+    headline: 'MoviePlex',
     lightText: false,
-    topLine: 'Movie Example',
+    topLine: 'Welcome',
     img: '',
     alt: 'Image',
     start: 'true'
@@ -38,25 +37,24 @@ export const homeObjThree = {
     lightTextDesc: true,
     buttonLabel: 'Get Started',
     description: 'MoviePlex is an application that helps the user save their favorite movies!',
-    headline: 'Headline Example',
+    headline: 'About',
     lightText: true,
-    topLine: 'Movie Example',
     img: '',
     alt: 'Image',
     start: ''
 };
 
 export const homeObjFour = {
-    lightBg: true,
-    primary: false,
-    imgStart: 'start',
-    lightTopLine: false,
-    lightTextDesc: false,
+    lightBg: false,
+    primary: true,
+    lightTopLine: true,
+    lightTextDesc: true,
     buttonLabel: 'Get Started',
     description: 'MoviePlex is an application that helps the user save their favorite movies!',
     headline: 'Headline Example',
-    lightText: false,
+    lightText: true,
     topLine: 'Movie Example',
+    imgStart: 'start',
     img: '',
     alt: 'Image',
     start: 'true'

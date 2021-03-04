@@ -2,9 +2,6 @@ import React from 'react';
 import { FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import {
     FooterContainer,
-    FooterSubscription,
-    FooterSubHeading,
-    FooterSubText,
     FooterLinksWrapper,
     FooterLinkItems,
     FooterLinkTitle,
@@ -21,33 +18,29 @@ import {
 const Footer = () => {
     return (
         <FooterContainer>
-            <FooterSubscription>
-                <FooterSubHeading>
-                    Exclusive Footer needs editing
-                </FooterSubHeading>
-                <FooterSubText>Edit Footer to see how it looks.</FooterSubText>
-            </FooterSubscription>
+            
             <FooterLinksWrapper>
-                <FooterLinkItems>
+                {/* <FooterLinkItems>
                     <FooterLinkTitle>Contact Us</FooterLinkTitle>
                     <FooterLink to='/signup'>Sign Up</FooterLink>
                     <FooterLink to='/'>Popular</FooterLink>
                     <FooterLink to='/'>Recently Added</FooterLink>
                     <FooterLink to='/'>Is it working?</FooterLink>
-                </FooterLinkItems>
+                </FooterLinkItems> */}
                 <FooterLinkItems>
-                    <FooterLinkTitle>About Us</FooterLinkTitle>
-                    <FooterLink to='/signup'>Sign Up</FooterLink>
+                    <FooterLinkTitle>Quick Links</FooterLinkTitle>
+                    <FooterLink to='/'>Home</FooterLink>
+                    <FooterLink to='/'>About</FooterLink>
                     <FooterLink to='/'>Popular</FooterLink>
-                    <FooterLink to='/'>Recently Added</FooterLink>
-                    <FooterLink to='/'>Is it working?</FooterLink>
+                    <FooterLink to='/'>Sign Up</FooterLink>
                 </FooterLinkItems>
                 <FooterLinkItems>
                     <FooterLinkTitle>Social Media</FooterLinkTitle>
-                    <FooterLink to='/signup'>Sign Up</FooterLink>
-                    <FooterLink to='/'>Popular</FooterLink>
-                    <FooterLink to='/'>Recently Added</FooterLink>
-                    <FooterLink to='/'>Is it working?</FooterLink>
+                    <FooterLink to='/'>Facebook</FooterLink>
+                    <FooterLink to='/'>Instagram</FooterLink>
+                    <FooterLink to='/'>Youtube</FooterLink>
+                    <FooterLink to='/'>Twitter</FooterLink>
+                    <FooterLink to='/'>Indeed</FooterLink>
                 </FooterLinkItems>
             </FooterLinksWrapper>
             <SocialMedia>

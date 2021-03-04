@@ -70,7 +70,7 @@ border-radius: 4px;
 `;
 
 export const PosterCardInfo = styled.div`
-display:flex;
+display: flex;
 flex-direction: column;
 height: 500px;
 padding: 24px;

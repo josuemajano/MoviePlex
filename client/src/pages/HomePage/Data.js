@@ -1,5 +1,3 @@
-// import {InfoSection} from '../../components/InfoSection';
-
 export const homeObjOne = {
     lightBg: false,
     primary: true,
@@ -22,11 +20,10 @@ export const homeObjTwo = {
     imgStart: 'start',
     lightTopLine: false,
     lightTextDesc: false,
-    buttonLabel: 'Get Started',
     description: 'MoviePlex is an application that helps the user save their favorite movies!',
-    headline: 'Headline Example',
+    headline: 'MoviePlex',
     lightText: false,
-    topLine: 'Movie Example',
+    topLine: 'Welcome to',
     img: '',
     alt: 'Image',
     start: 'true'
@@ -40,9 +37,8 @@ export const homeObjThree = {
     lightTextDesc: true,
     buttonLabel: 'Get Started',
     description: 'MoviePlex is an application that helps the user save their favorite movies!',
-    headline: 'Headline Example',
+    headline: 'About',
     lightText: true,
-    topLine: 'Movie Example',
     img: '',
     alt: 'Image',
     start: ''

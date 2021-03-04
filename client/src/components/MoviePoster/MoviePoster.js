@@ -9,7 +9,7 @@ import {
     PosterCard,
     PosterCardInfo,
     PosterCardIcon
-} from './MoviePoster.elements';
+} from './MoviePoster.elements'
 
 function MoviePoster () {
     return (

@@ -1,12 +1,10 @@
 import React from 'react';
-import { homeObjOne, homeObjTwo } from './Data';
-import { InfoSection } from '../../components';
+import { MoviePoster } from '../../components';
 
 const Popular = () => {
     return (
         <>
-            <InfoSection {...homeObjOne} />
-            <InfoSection {...homeObjTwo} />
+            <MoviePoster />
         </>
     )
 }

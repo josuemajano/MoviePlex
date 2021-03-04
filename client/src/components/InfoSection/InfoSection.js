@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { BsSearch } from 'react-icons/bs';
+import React, { useState } from 'react';
+import './styles.css';
+import MovieCard from './MovieCard';
 import { Container,  } from '../../globalStyles';
 import {
     InfoSec,
@@ -11,10 +11,10 @@ import {
     Heading,
     Subtitle,
     ImgWrapper,
-    Img,
-    Form,
-    CircleButton,
-    Input
+    Img
+    // Form,
+    // CircleButton,
+    // Input
 } from './InfoSection.elements';
 
 const InfoSection = ({
@@ -32,16 +32,37 @@ const InfoSection = ({
     alt,
     start
 }) => {
-    const [input, setInput] = useState("");
-    const [barOpened, setBarOpened] = useState(false);
-    const formRef = useRef();
-    const inputFocus = useRef();
+    // const [input, setInput] = useState("");
+    // const [barOpened, setBarOpened] = useState(false);
+    // const formRef = useRef();
+    // const inputFocus = useRef();
     
-    const onFormSubmit = e => {
+    // const onFormSubmit = e => {
+    //     e.preventDefault();
+    //     setInput("");
+    //     setBarOpened(false);
+    //     console.log(`Form was submitted with input: ${input}`);
+    // };
+
+    const [query, setQuery] = useState(null);
+    const [movies, setMovies] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+    const handleSubmit = async (e) => {
+        setLoading(true);
         e.preventDefault();
-        setInput("");
-        setBarOpened(false);
-        console.log(`Form was submitted with input: ${input}`);
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=b7d308e5e7d9d563bfeddd88c65fcd6e&language=en-US&query=${query}&page=1&include_adult=false`;
+        try {
+            const res = await fetch(url);
+            const data = await res.json();
+            setMovies(data.results);
+        } catch (err) {
+            setError('Failed to fetch movies');
+            setMovies([]);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -54,22 +75,22 @@ const InfoSection = ({
                                 <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
                                 <Heading lightText={lightText}>{headline}</Heading>
                                 <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                                <Link to='/'>
-                                    <Form barOpended={barOpened} onClick={() => {
-                                        setBarOpened(true);
-                                        inputFocus.current.focus();
-                                    }} onFocus={() => {
-                                        setBarOpened(true);
-                                        inputFocus.current.focus();
-                                    }} onBlur={() => {
-                                        setBarOpened(false);
-                                    }} onSubmit={onFormSubmit} ref={formRef}>
-                                        <CircleButton type="submit" barOpened={barOpened}>
-                                            <BsSearch />
-                                        </CircleButton>
-                                        <Input onChange={e => setInput(e.target.value)} ref={inputFocus} value={input} barOpened={barOpened} placeholder="  Search for a movie..."/>
-                                    </Form>
-                                </Link>
+                                <form onSubmit={handleSubmit} className="form">
+                                        <input type="text" name="query" value={query} className="input" onChange={(e) => setQuery(e.target.value)} placeholder="i.e. Jurrasic Park"/>
+                                        <button className="button" type="submit">
+                                            Search!
+                                        </button>
+                                </form>
+                                {loading && <p className="flash info"> Loading...</p>}
+                                {error && <p className="flash error">{error}</p>}
+                                {!loading && !error && (
+                                    <div className="card-list">
+                                        {movies && movies.filter((movie) => movie.poster_path)
+                                        .map((movie) => (
+                                            <MovieCard movie={movie} key={movie.is}/>
+                                        ))}
+                                    </div>
+                                )}
                             </TextWrapper>
                         </InfoColumn>
                         <InfoColumn>
