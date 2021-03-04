@@ -1,36 +1,44 @@
 import React from 'react';
 import './signup.css'
 
-const SignUp = () => {
-    return(
-        <form className="wrapper">
-                <h3>Sign Up</h3>
+export default function SignUp() {
 
-                <div className="form-group">
-                    <label>First Name </label>
-                    <input type="text" className="form-control" placeholder="First name" />
+    return (
+        <div className="wrapper">
+
+            <div className="bg-login">
+                <div className="body">
+                    <h2 className="title">Sign Up</h2>
+                        <div className="columns is-centered">
+                            <div className="column">
+                                <div className="notification">
+                                    <div className="field">
+                                        <label className="label">Email</label>
+                                            <p className="control has-icons-left">
+                                                <input className="input" type="email" placeholder="Email" />
+                                            
+                                            </p>
+                                    </div>
+                                    <div className="field">
+                                        <label className="label has-text-left">First Name</label>
+                                            <p className="control has-icons-left has-icons-right">
+                                                <input className="input" type="text" placeholder="First name" />
+                                              
+                                            </p>
+                                    </div>
+                                    <div className="field">
+                                        <label className="label has-text-left">Last Name</label>
+                                            <p className="control">
+                                                <input className="input" type="text" placeholder="Last name" />
+                                               
+                                            </p>
+                                    </div>
+                                     <a className="button" href="/">Sign Up</a>
+                                    </div>
+                                </div>
+                             </div>
+                         </div>
                 </div>
-
-                <div className="form-group">
-                    <label>Last Name </label>
-                    <input type="text" className="form-control" placeholder="Last name" />
-                </div>
-
-                <div className="form-group">
-                    <label>Email Address </label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
-
-                <div className="form-group">
-                    <label>Password </label>
-                    <input type="password" className="form-control" placeholder="Enter Password" />
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                <p className="forgot-password text-right" href="/home">
-                </p>
-        </form>
-    );
+        </div>
+    )
 }
-
-export default SignUp;

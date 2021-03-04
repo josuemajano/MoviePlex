@@ -20,10 +20,9 @@ export const homeObjTwo = {
     imgStart: 'start',
     lightTopLine: false,
     lightTextDesc: false,
-    description: 'MoviePlex is an application that helps the user save their favorite movies!',
-    headline: 'MoviePlex',
+    description: 'In MoviePlex you can search thousands of movies thanks to The MovieDB!',
+    headline: 'About',
     lightText: false,
-    topLine: 'Welcome to',
     img: '',
     alt: 'Image',
     start: 'true'

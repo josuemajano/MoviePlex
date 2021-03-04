@@ -131,5 +131,5 @@ width: 240px;
 
 export const SocialIconLink = styled.div`
 color: #fff;
-font-size: 24px;
+font-size: 24px
 `;

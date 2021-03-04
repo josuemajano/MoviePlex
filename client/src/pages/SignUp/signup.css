@@ -1,4 +1,8 @@
 .wrapper{
     text-align: center;
-    
+    box-sizing: border-box
+}
+
+.button {
+    size: 0rem;
 }
