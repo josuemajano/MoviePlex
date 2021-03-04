@@ -36,7 +36,7 @@ export const homeObjThree = {
     lightTopLine: true,
     lightTextDesc: true,
     buttonLabel: 'Get Started',
-    description: 'MoviePlex is an application that helps the user save their favorite movies!',
+    description: 'In MoviePlex you can search thousands of movies thanks to The MovieDB!',
     headline: 'About',
     lightText: true,
     img: '',
