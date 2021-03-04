@@ -12,8 +12,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/', userHandler);
 
-router.get()
-
 // Catch all route 
 app.get('*', (req, res) => {
     res.status(404).send('No Content Found')
