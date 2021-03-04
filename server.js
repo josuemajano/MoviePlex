@@ -1,7 +1,5 @@
 const express = require('express');
-const app = express();
-const parseurl = require('parseurl');
-const Sequelize = require('sequelize');
+const app = express();;
 const { User } = require('./models');
 const userHandler = require('./app/routes/userHandler');
 const router = express.Router();
