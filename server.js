@@ -1,8 +1,8 @@
 const express = require('express');
-const app = express();;
+const app = express();
+const path = require('path');
 const { User } = require('./models');
 const userHandler = require('./app/routes/userHandler');
-const router = express.Router();
 
 const PORT = process.env.PORT;
 
