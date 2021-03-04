@@ -9,7 +9,8 @@ const PORT = process.env.PORT;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+// Have Node serve the files for our built React app
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use('/', userHandler);
 
 // Catch all route 
